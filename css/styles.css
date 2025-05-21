@@ -1,0 +1,949 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* -- Dark Theme with Colorful Accents -- */
+    /* 基本颜色定义 */
+    --colorful-bg-main: #121212;          /* 主背景: 柔和的黑色 */
+    --colorful-bg-section: #1A1A1A;      /* 区块背景: 比主背景稍亮的深灰色 */
+    --colorful-text-dark: #EAEAEA;       /* 主要文字颜色: 浅灰色/米白色，用于深色背景 */
+    --colorful-text-light: #FFFFFF;      /* 浅色文字: 纯白色，用于彩色强调背景或特别需要高对比度的地方 */
+
+    /* 多彩强调色系列 - 五颜六色 (这些保持不变，作为点缀) */
+    --colorful-accent-red: #E74C3C;       /* 强调色1: 红色 (Pomegranate) */
+    --colorful-accent-orange: #F39C12;    /* 强调色2: 橙色 (Orange) */
+    --colorful-accent-yellow: #F1C40F;    /* 强调色3: 黄色 (Sun Flower) */
+    --colorful-accent-green: #2ECC71;     /* 强调色4: 绿色 (Emerald) */
+    --colorful-accent-blue: #3498DB;      /* 强调色5: 蓝色 (Peter River) */
+    --colorful-accent-purple: #9B59B6;    /* 强调色6: 紫色 (Amethyst) */
+
+    /* 边框和阴影 */
+    --colorful-border: #2A3B4D;          /* 边框: 深色主题的微妙边框 */
+    --colorful-shadow: rgba(200, 220, 255, 0.05);/* 阴影: 深色主题下的微妙光晕效果 */
+
+    /* -- Mapping existing theme variables to the new dark theme with colorful accents -- */
+    /* Backgrounds */
+    --theme-black: var(--colorful-bg-main);       /* 主背景替换原来的黑色 */
+    --theme-dark-blue: var(--colorful-bg-section); /* 区块背景替换原来的深蓝色 */
+
+    /* Text */
+    --theme-text-on-dark: var(--colorful-text-dark);    /* 在浅色背景上的深色文字 (原变量名有点误导，现在修正其用途) */
+    /* --theme-text-on-light: var(--colorful-text-light); /* 如果有专门在深色组件上用浅色文字的变量，则用这个 */
+    /* For now, assuming most text will be dark on light backgrounds */
+
+    /* Accents - We will map the primary ones and others can be used directly or cycled */
+    --theme-accent-blue: var(--colorful-accent-blue);         /* 主要强调色 - 使用新的彩色蓝 */
+    --theme-accent-blue-hover: var(--colorful-accent-orange); /* 主要强调色的悬停 - 使用新的彩色橙 */
+
+    /* Borders */
+    --theme-border-dark: var(--colorful-border);         /* 边框颜色 */
+
+    /* Shadows */
+    --theme-shadow-dark: var(--colorful-shadow); /* 阴影颜色 */
+
+    /* -- Mapping old direct variable usage (these were from the old theme) -- */
+    /* It's better to update components to use the new --colorful-accent-* directly where possible */
+    --bg-main-yellow: var(--theme-black); /* Re-map to new main background */
+    --bg-section-green: var(--theme-dark-blue); /* Re-map to new section background */
+
+    --text-dark-on-light: var(--theme-text-on-dark); /* Default text color */
+    --text-light-on-dark: var(--theme-text-on-dark); /* Text on components that might have had dark bg; now they have light bg, so text is dark */
+
+    --accent-bright-yellow: var(--colorful-accent-yellow); /* Example: map to colorful yellow */
+    --accent-vibrant-green: var(--colorful-accent-green);  /* Example: map to colorful green */
+
+    --border-color-soft: var(--theme-border-dark);
+    --shadow-color-general: var(--theme-shadow-dark);
+
+    --primary-purple: var(--colorful-accent-purple); /* Example: map to colorful purple */
+    --secondary-purple: var(--colorful-accent-red);  /* Example: map to colorful red for variety */
+    --primary-black: var(--colorful-text-dark); /* Was text, now should be text color */
+    --secondary-black: var(--colorful-text-dark); /* Was text, now should be text color */
+    --highlight-purple: var(--primary-purple); /* Alias */
+    --text-light: var(--colorful-text-light); /* Text for use on colorful/darker accents */
+    --text-dark: var(--colorful-text-dark);   /* Default dark text */
+    --background-dark: var(--colorful-bg-section); /* Old dark bg var, map to new section bg */
+    --background-deep: var(--colorful-bg-section); /* Old deeper bg var, map to new section bg */
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* 字体：Arial 或无衬线字体 */
+    line-height: 1.6; /*行高 */
+    color: var(--text-dark-on-light); /* 文字颜色：将使用新的 --theme-text-on-dark */
+    background-color: var(--bg-main-yellow); /* 背景颜色：将使用新的 --theme-black */
+}
+
+/* Header Styles */
+/* 头部样式 */
+header {
+    background: linear-gradient(135deg, var(--colorful-bg-section), var(--colorful-bg-main)); /* 深色渐变背景 */
+    color: var(--colorful-text-dark); /* 页眉文字用浅色 */
+    padding: 1rem; /* 内边距 */
+    display: flex; /* 使用flex布局 */
+    justify-content: space-between; /* 两端对齐 */
+    align-items: center; /* 垂直居中 */
+    box-shadow: 0 2px 10px var(--shadow-color-general); /* 阴影效果 */
+}
+
+.logo-container {
+    display: flex; /* 使用flex布局 */
+    align-items: center; /* 垂直居中 */
+}
+
+.retro-logo {
+    font-family: 'Press Start 2P', cursive; /* Logo字体 */
+    font-size: 2rem; /* Logo字号 */
+    color: var(--colorful-accent-yellow); /* Logo用一个明亮的强调色 */
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.7); /* 黑色文字阴影 */
+    letter-spacing: 2px; /* 字间距 */
+}
+
+.language-selector {
+    display: flex; /* 使用flex布局 */
+    gap: 0.5rem; /* 元素间距 */
+}
+
+.lang-btn {
+    background-color: var(--colorful-accent-blue); /* 按钮背景用彩色强调色 */
+    color: var(--colorful-text-light); /* 按钮文字用纯白色 */
+    border: 1px solid var(--colorful-accent-blue); /* 边框颜色与背景一致，或用 --colorful-border */
+    padding: 0.5rem 1rem; /* 内边距 */
+    border-radius: 4px; /* 圆角 */
+    cursor: pointer; /* 鼠标指针：手型 */
+    transition: all 0.3s; /* 过渡效果 */
+}
+
+.lang-btn:hover, .lang-btn.active {
+    background-color: var(--colorful-accent-orange); /* 悬停/激活背景用另一种彩色 */
+    color: var(--colorful-text-light); /* 文字保持纯白色 */
+    border-color: var(--colorful-accent-orange);
+    transform: translateY(-2px); /* 轻微上移 */
+}
+
+/* Main Content Layout */
+/* 主内容布局 */
+main {
+    display: grid; /* 使用Grid布局 */
+    /* 定义网格区域的名称，方便布局 */
+    grid-template-areas:
+        "top top top"
+        "left main-content right"
+        "bottom bottom bottom";
+    /* 定义列宽：两侧区域显著更宽(各8fr)，中间区域更窄(1fr) */
+    grid-template-columns: 1fr 4fr 1fr !important;
+    /* 定义行高：顶部和底部高度自动，中间区域占据剩余空间 */
+    grid-template-rows: auto 1fr auto; 
+    gap: 1rem !important;
+    padding: 1rem; /* 内边距 */
+    max-width: 100%; /* 最大宽度占满父容器 */
+    min-height: calc(100vh - 70px - 2rem); /* 最小高度，大约为视口高度减去header高度和padding (假设header约70px) */
+    margin: 0 auto; /* 水平居中 */
+    background: none; /* 无背景色（由body控制） */
+}
+
+/* Left Sidebar - Game Links */
+/* 左侧边栏 - 游戏链接 */
+.game-links {
+    background-color: var(--colorful-bg-section);
+    padding: 1rem; /* 内边距 */
+    border-radius: 8px; /* 圆角 */
+    box-shadow: 0 2px 10px var(--shadow-color-general); /* 阴影 */
+    border: 1px solid var(--colorful-border);
+    font-family: 'Poppins', Arial, sans-serif; /* 字体 */
+    font-size: 1rem; /* 字号 */
+}
+
+.game-links h2 {
+    color: var(--colorful-accent-purple);
+    margin-bottom: 1rem; /* 下外边距 */
+    font-size: 1.2rem; /* 标题字号 */
+    border-bottom: 2px solid var(--colorful-accent-purple);
+    padding-bottom: 0.5rem; /* 下内边距 */
+}
+
+.game-links ul {
+    list-style: none; /* 无列表样式 */
+    padding-left: 0; /* 左内边距 */
+}
+
+.game-links li {
+    display: flex; /* 使用flex布局 */
+    align-items: center; /* 垂直居中 */
+    margin-bottom: 0.3rem; /* 下外边距 */
+}
+
+.game-links a {
+    display: flex; /* 使用flex布局 */
+    align-items: center; /* 垂直居中 */
+    gap: 0.7em; /* 图标与文字间距 */
+    font-size: 1.05rem; /* 字号 */
+    font-weight: 500; /* 字重 */
+    padding: 0.45rem 0.7rem; /* 内边距 */
+    border-radius: 6px; /* 圆角 */
+    transition: background 0.2s, color 0.2s, transform 0.2s; /* 过渡效果 */
+    letter-spacing: 0.01em; /* 字间距 */
+    color: var(--colorful-text-dark); /* 链接文字颜色为浅色 */
+    text-decoration: none; /* 无下划线 */
+}
+
+.game-links a:hover {
+    background-color: var(--colorful-accent-green);
+    color: var(--colorful-text-light);
+    transform: translateX(6px) scale(1.04); /* 悬停效果：右移并放大 */
+}
+
+.game-links hr {
+    border: 0; /* 无边框 */
+    border-top: 1.5px solid var(--colorful-border); /* 顶部边框：柔和的灰色边框 */
+    margin: 0.7rem 0; /* 上下外边距 */
+}
+
+.game-links a {
+    font-family: 'Poppins', 'Segoe UI Emoji', 'Segoe UI Symbol', Arial, sans-serif; /* 链接字体 */
+}
+
+/* Main Game Section */
+/* 主游戏区域 */
+.main-game {
+    grid-area: main-content; /* 指定该元素在网格中的位置为 'main-content' */
+    background-color: var(--colorful-bg-section);
+    border-radius: 8px; /* 圆角 */
+    box-shadow: 0 2px 10px var(--shadow-color-general); /* 阴影 */
+    overflow: hidden; /* 隐藏溢出内容 */
+    border: 1px solid var(--colorful-border); /* 边框 */
+    display: flex; /* 使用flex布局，使其子元素（game-container, game-info）能更好控制 */
+    flex-direction: column; /* flex子元素垂直排列 */
+}
+
+.game-container {
+    position: relative; /* 相对定位 */
+    width: 100%; /* 宽度100% */
+    height: 600px; /* 高度600px */
+}
+
+.game-container iframe {
+    width: 100%; /* 宽度100% */
+    height: 100%; /* 高度100% */
+    border: none; /* 无边框 */
+}
+
+.fullscreen-btn {
+    position: absolute; /* 绝对定位 */
+    bottom: 1rem; /* 距底部1rem */
+    right: 1rem; /* 距右侧1rem */
+    background-color: var(--colorful-accent-red);
+    color: var(--colorful-text-light);
+    border: 1px solid var(--colorful-accent-red);
+    padding: 0.5rem 1rem; /* 内边距 */
+    border-radius: 4px; /* 圆角 */
+    cursor: pointer; /* 鼠标指针：手型 */
+    transition: all 0.3s; /* 过渡效果 */
+}
+
+.fullscreen-btn:hover {
+    background-color: var(--colorful-accent-orange);
+    color: var(--colorful-text-light);
+    border-color: var(--colorful-accent-orange);
+    transform: translateY(-2px); /* 轻微上移 */
+}
+
+/* Game Information Section */
+/* 游戏信息区域 */
+.game-info {
+    padding: 1rem; /* 内边距 */
+}
+
+.game-info h2 {
+    color: var(--colorful-accent-blue);
+    margin-bottom: 1rem; /* 下外边距 */
+    border-bottom: 2px solid var(--colorful-accent-blue);
+    padding-bottom: 0.5rem; /* 下内边距 */
+}
+
+.game-screenshots {
+    display: flex; /* 使用flex布局 */
+    gap: 1rem; /* 图片间距 */
+    margin-bottom: 1rem; /* 下外边距 */
+    overflow-x: auto; /* 水平溢出时显示滚动条 */
+}
+
+.game-screenshots img {
+    width: 200px; /* 图片宽度 */
+    height: 120px; /* 图片高度 */
+    object-fit: cover; /* 图片裁剪方式 */
+    border-radius: 4px; /* 圆角 */
+}
+
+/* 针对 .game-features, .how-to-play 等内容区块的统一样式调整将在此文件下方进行 */
+/* 旧的 .game-features, .how-to-play 等区块样式会被下方更具体的规则覆盖 */
+
+.review {
+    /* 样式将在下方 "自动检测背景色并适配文字颜色" 部分（已重构）中定义 */
+    margin-bottom: 1rem; /* 评论区下外边距 */
+}
+
+.review p {
+    font-style: italic; /* 斜体 */
+    margin-bottom: 0.5rem; /* 段落下外边距 */
+}
+
+.review span {
+    /* 颜色将在下方定义 */
+    font-size: 0.9rem; /* 评论者名称字号 */
+}
+
+.faq-item {
+    /* 样式将在下方 "自动检测背景色并适配文字颜色" 部分（已重构）中定义 */
+    margin-bottom: 1rem; /* FAQ项下外边距 */
+}
+
+.faq-item h4 {
+    /* 颜色将在下方定义 */
+    margin-bottom: 0.5rem; /* FAQ问题下外边距 */
+}
+
+
+/* Right Sidebar - Mini Games */
+/* 右侧边栏 - 小游戏列表 */
+.mini-games {
+    background-color: var(--colorful-bg-section); /* 区块背景 */
+    padding: 1rem; /* 内边距 */
+    border-radius: 8px; /* 圆角 */
+    box-shadow: 0 2px 10px var(--shadow-color-general); /* 阴影 */
+    border: 1px solid var(--colorful-border); /* 边框 */
+}
+
+.mini-games h2 {
+    font-size: 1.5em; /* 标题字号 */
+    margin-bottom: 15px; /* 下外边距 */
+    color: var(--colorful-accent-purple); /* 标题颜色：彩色 */
+    text-align: center; /* 文本居中 */
+}
+
+.mini-game-grid {
+    display: grid; /* 使用Grid布局 */
+    grid-template-columns: 1fr; /* 单列 */
+    gap: 10px; /* 网格间距 */
+}
+
+/* General style for each small game item */
+.mini-game {
+    /* border: 1px solid var(--border-color-soft); /* Original border, consider removing for borderless look if image implies it */
+    border-radius: 20px; /* 容器的圆角，8px看起来不错 */
+    overflow: hidden; /* 这很关键，确保图片和标题覆盖层都遵守容器的圆角 */
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    background-color: var(--colorful-bg-main); /* 小游戏背景用主黑色 */
+    position: relative; /* 必须为relative，以便标题可以绝对定位于其内部 */
+    aspect-ratio: 1 / 1; /* 默认使整个游戏项成为正方形 */
+    display: flex; /* 使用flex确保内容结构 */
+    flex-direction: column; /* 列方向排列（虽然标题是绝对定位的） */
+    box-shadow: 0 2px 5px var(--colorful-shadow); /* 统一阴影 */
+    /* height: 150px; /* 移除可能存在的固定高度 */
+}
+
+.mini-game:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px var(--shadow-color-general); /* 使用主题阴影变量 */
+}
+
+/* Game cover area within each mini-game */
+.mini-game .game-cover {
+    width: 100%;
+    height: 100%; /* 新增/修改：使封面区域完全填充父容器（现在是正方形的.mini-game）*/
+    /* aspect-ratio: 16 / 9; /* 移除：不再需要，由父容器的aspect-ratio控制形状 */
+    position: relative; /* 确保图片在标题下方 */
+    overflow: hidden; /* 再次确保图片被裁剪 */
+}
+
+/* General style for the image within the game cover */
+.mini-game .game-cover img {
+    display: block;
+    width: 100%;
+    height: 100%; /* 图片完全填充 .game-cover 区域 */
+    object-fit: cover; /* 保持图片宽高比，覆盖并裁剪以填充容器 */
+    /* border-radius:0; /* 图片不需要单独的圆角，父元素的 overflow:hidden 会处理 */
+}
+
+/* General style for the game title, styled as an overlay */
+.mini-game .game-title {
+    position: absolute; /* 绝对定位，覆盖在图片底部 */
+    bottom: 0;
+    left: 0;
+    right: 0; /* 横向铺满父容器 (.mini-game) */
+    /* background-color: rgba(0, 0, 0, 0.75); */
+     /* 恢复深色半透明背景，确保标题可读性 */
+    color: #FFFFFF; /* 标题文字强制白色 */
+    padding: 6px 10px; /* 调整内边距使文字更舒适 */
+    text-align: center;
+    font-size: 0.85em; /* 轻微调整字体大小 */
+    font-weight: bold; /* 中等字重 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-top: none; /* 移除原有的上边框 */
+    z-index: 1; /* 确保标题在图片之上 */
+    /* .mini-game 的 overflow:hidden 和 border-radius 会使得标题的底部边缘看起来也是圆角 */
+}
+
+.mini-game iframe {
+    position: absolute; /* 绝对定位 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    opacity: 0; /* 默认透明 */
+    transition: opacity 0.3s ease; /* 透明度过渡 */
+    z-index: 2; /* 层级 */
+}
+
+.mini-game.active .game-cover {
+    opacity: 0; /* 激活时封面透明 */
+}
+
+.mini-game.active iframe {
+    opacity: 1; /* 激活时iframe不透明 */
+}
+
+/* Footer Styles */
+/* 页脚样式 */
+footer {
+    background: linear-gradient(135deg, var(--colorful-bg-section), var(--colorful-bg-main)); /* 深色渐变背景 */
+    color: var(--colorful-text-dark); /* 页脚文字用浅色 */
+    padding: 2rem; /* 内边距 */
+    margin-top: 2rem; /* 上外边距 */
+}
+
+.footer-content {
+    max-width: 1200px; /* 最大宽度 */
+    margin: 0 auto; /* 水平居中 */
+    text-align: center; /* 文本居中 */
+}
+
+.copyright {
+    font-size: 0.9rem; /* 字号 */
+}
+
+.copyright a {
+    color: var(--colorful-accent-yellow);
+    text-decoration: none; /* 无下划线 */
+    transition: all 0.3s; /* 过渡 */
+}
+
+.copyright a:hover {
+    color: var(--colorful-accent-orange);
+    text-decoration: underline; /* 悬停显示下划线 */
+}
+
+/* Responsive Design */
+/* 响应式设计 */
+@media (max-width: 1200px) {
+    main {
+        grid-template-columns: 150px 1fr 250px; /* 中等屏幕布局调整 */
+    }
+}
+
+@media (max-width: 992px) {
+    main {
+        grid-template-columns: 1fr; /* 较小屏幕布局调整：单列 */
+    }
+    
+    .game-links, .mini-games {
+        display: none; /* 隐藏侧边栏 */
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* 头部元素垂直排列 */
+        text-align: center; /* 文本居中 */
+    }
+    
+    .language-selector {
+        margin-top: 1rem; /* 语言选择器上外边距 */
+    }
+    
+    .game-container {
+        height: 400px; /* 游戏容器高度调整 */
+    }
+    
+    .game-screenshots {
+        flex-direction: column; /* 游戏截图垂直排列 */
+    }
+    
+    .game-screenshots img {
+        width: 100%; /* 图片宽度100% */
+        height: auto; /* 高度自适应 */
+    }
+    
+    .why-content {
+        grid-template-columns: 1fr; /* "Why Choose Us"部分单列布局 */
+    }
+    
+    /* .game-links, .mini-games 的背景色已在各自规则中用新变量定义 */
+    
+    .game-links {
+        font-size: 0.95rem; /* 左侧边栏字号调整 */
+    }
+    
+    .game-links a {
+        font-size: 1rem; /* 链接字号调整 */
+        padding: 0.4rem 0.5rem; /* 链接内边距调整 */
+    }
+}
+
+/* Game Description Section */
+/* 游戏描述区域 - 样式将在下方"重构后的内容区块样式"部分定义 */
+.game-description {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    /* background-color: #f8f9fa; 旧样式，将被覆盖 */
+    border-radius: 8px;
+}
+
+.game-description p {
+    line-height: 1.8;
+    /* color: #444; 旧样式，将被覆盖 */
+}
+
+/* Game Tips Section */
+/* 游戏技巧区域 - 样式将在下方"重构后的内容区块样式"部分定义 */
+.game-tips {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    /* background-color: #f8f9fa; 旧样式，将被覆盖 */
+    border-radius: 8px;
+}
+
+.game-tips ul {
+    list-style-type: none; /* 无列表样式 */
+    padding-left: 0;
+}
+
+.game-tips li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative; /* 相对定位，用于图标 */
+}
+
+.game-tips li:before {
+    content: "💡"; /* 图标 */
+    position: absolute;
+    left: 0;
+    color: var(--colorful-accent-yellow); /* 图标颜色：黄色 */
+}
+
+/* Game Updates Section */
+/* 游戏更新区域 - 样式将在下方"重构后的内容区块样式"部分定义 */
+.game-updates {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    /* background-color: #f8f9fa; 旧样式，将被覆盖 */
+    border-radius: 8px;
+}
+
+.game-updates ul {
+    list-style-type: none; /* 无列表样式 */
+    padding-left: 0;
+}
+
+.game-updates li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative; /* 相对定位，用于图标 */
+}
+
+.game-updates li:before {
+    content: "🔄"; /* 图标 */
+    position: absolute;
+    left: 0;
+    color: var(--colorful-accent-green); /* 图标颜色：绿色 */
+}
+
+/* Enhanced How to Play Section */
+/* 强化版玩法介绍区域 - 样式将在下方"重构后的内容区块样式"部分定义 */
+.how-to-play ul {
+    list-style-type: none; /* 无列表样式 */
+    padding-left: 0;
+    margin-top: 1rem;
+}
+
+.how-to-play li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative; /* 相对定位，用于图标 */
+}
+
+.how-to-play li:before {
+    content: "🎮"; /* 图标 */
+    position: absolute;
+    left: 0;
+    color: var(--colorful-accent-blue); /* 图标颜色：蓝色 */
+}
+
+/* Enhanced FAQ Section */
+/* 强化版FAQ区域 - .faq-item 样式将在下方"重构后的内容区块样式"部分定义 */
+.faq-item {
+    /* background-color: #f8f9fa; 旧样式，将被覆盖 */
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.faq-item h4 {
+    /* color: #2c3e50; 旧样式，将被覆盖 */
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.faq-item h4:before {
+    content: "❓"; /* 图标 */
+    margin-right: 0.5rem;
+    color: var(--colorful-accent-purple); /* 图标颜色：紫色 */
+}
+
+.faq-item p {
+    /* color: #666; 旧样式，将被覆盖 */
+    line-height: 1.6;
+}
+
+/* Why Section Styles */
+/* "为何选择我们"区域 - 样式将在下方"重构后的内容区块样式"部分定义 */
+.why-section {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    /* background-color: var(--background-deep); 旧样式，将被覆盖 */
+    border-radius: 8px;
+    /* border: 1px solid var(--primary-purple); 旧样式，将被覆盖 */
+}
+
+.why-section h3 {
+    /* color: var(--highlight-purple); 旧样式，将被覆盖 */
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    /* border-bottom: 2px solid var(--primary-purple); 旧样式，将被覆盖 */
+    padding-bottom: 0.5rem;
+}
+
+.why-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 两列布局 */
+    gap: 1.5rem; /* 间距 */
+}
+
+.why-item {
+    /* background-color: white; 旧样式，将被覆盖 */
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px var(--shadow-color-general); /* 阴影 */
+    transition: all 0.3s ease; /* 过渡 */
+    /* border: 1px solid var(--primary-purple); 旧样式，将被覆盖 */
+}
+
+.why-item:hover {
+    transform: translateY(-5px); /* 悬停上移 */
+    border-color: var(--colorful-accent-green); /* 悬停边框颜色：绿色 (如果边框未被!important移除) */
+}
+
+.why-item h4 {
+    /* color: var(--highlight-purple); 旧样式，将被覆盖 */
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.why-item p {
+    /* color: var(--text-dark); 旧样式，将被覆盖 */
+    line-height: 1.6;
+}
+
+/* Game Container Loading State */
+/* 游戏容器加载状态 */
+.game-container {
+    position: relative;
+    width: 100%;
+    height: 600px;
+}
+
+.game-container.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* 使用一个固定的彩色强调色作为加载动画的颜色，背景调整为深色主题的半透明 */
+    background: rgba(0, 0, 0, 0.7) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid"><circle cx="50" cy="50" fill="none" stroke="%233498DB" stroke-width="10" r="35" stroke-dasharray="164.93361431346415 56.97787143782138"><animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s" values="0 50 50;360 50 50" keyTimes="0;1"/></circle></svg>') center center no-repeat;
+    background-size: 50px; /* 加载动画大小 */
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.game-container.loading::after {
+    opacity: 1; /* 加载时显示动画 */
+}
+
+/* Mini Game Active State */
+/* 小游戏激活状态 */
+.mini-game.active {
+    border: 2px solid var(--colorful-accent-green); /* 激活边框：用彩色绿 */
+    box-shadow: 0 0 10px var(--colorful-accent-green); /* 激活阴影：用彩色绿 */
+}
+
+.mini-game.active .game-cover {
+    opacity: 0; /* 激活时封面透明 */
+}
+
+.mini-game.active iframe {
+    opacity: 1; /* 激活时iframe不透明 */
+}
+
+/* Game Title Transition */
+/* 游戏标题过渡 */
+.game-info h2 {
+    transition: opacity 0.3s ease; /* 透明度过渡 */
+}
+
+.game-info h2.updating {
+    opacity: 0; /* 更新时透明 */
+}
+
+/* 导航栏新字体和图标样式 */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+
+/* 移除主要区域和内容块的边框 (用户自定义重要样式) */
+/* This !important might need to be removed if borders are desired in the dark theme */
+/* .game-links,
+.mini-games,
+.main-game,
+.game-features,
+.how-to-play,
+.player-reviews,
+.faq,
+.why-section,
+.why-item {
+    border: none !important; (Consider if some subtle borders are needed with --theme-border-dark)
+    If no border, then this rule is fine. If borders are desired, remove !important or the rule.
+} */
+
+/* 移除标题下划线边框 (用户自定义重要样式) */
+/* Similar consideration for title underlines */
+/* .game-links h2,
+.mini-games h2,
+.game-info h2,
+.why-section h3 {
+    border-bottom: none !important;
+} */
+
+/* --- 重构后的内容区块样式 --- */
+/* Re-evaluate these for the dark theme */
+
+/* 区块组1 (e.g., game features, etc.) - these were --bg-section-green, now --theme-dark-blue */
+.game-features,
+.how-to-play,
+.player-reviews, 
+.faq, 
+.why-section {
+    color: var(--colorful-text-dark) !important; 
+    background-color: var(--colorful-bg-section);
+    padding: 1rem; 
+    border-radius: 8px; 
+    margin-bottom: 1.5rem; 
+    border: 1px solid var(--colorful-border); /* Add subtle border for definition */
+}
+
+/* 区块组2 (e.g., game description) - these were --bg-main-yellow, now --theme-black */
+.game-description,
+.game-tips,
+.game-updates,
+.faq-item { 
+    color: var(--colorful-text-dark) !important; 
+    background-color: var(--colorful-bg-main);
+    padding: 1rem; 
+    border-radius: 8px; 
+    margin-bottom: 1rem; 
+    border: 1px solid var(--colorful-border); /* Add subtle border */
+}
+
+/* Content block titles (h3, h4) */
+.game-features h3,
+.how-to-play h3,
+.player-reviews h3, 
+.faq h3, 
+.why-section h3,
+.game-description h3,
+.game-tips h3,
+.game-updates h3,
+.faq-item h4, 
+.why-item h4 {
+    color: var(--colorful-accent-blue) !important; /* Titles use accent blue */
+    margin-bottom: 0.75rem; 
+}
+
+/* Reviews and Why-items */
+.review { 
+    background-color: var(--colorful-bg-main);
+    padding: 1rem; 
+    border-radius: 6px; 
+    border: 1px solid var(--colorful-border);
+}
+.review p, .review span {
+    color: var(--colorful-text-dark) !important;
+}
+
+.why-item { 
+    background-color: var(--colorful-bg-main);
+    border: 1px solid var(--colorful-border);
+}
+.why-item p {
+    color: var(--colorful-text-dark) !important; 
+}
+
+
+/* New styles for the game lists in the new layout */
+.game-list {
+    background-color: var(--colorful-bg-section);
+    padding: 1rem;
+    border-radius: 8px;
+    /* box-shadow: 0 2px 10px var(--theme-shadow-dark); Let's remove heavy shadows for dark theme */
+    border: 1px solid var(--colorful-border);
+    overflow-y: auto;
+}
+
+.game-list h2 { /* Titles inside game lists, if they are uncommented */
+    color: var(--colorful-text-dark);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    border-bottom: 1px solid var(--colorful-border);
+    padding-bottom: 0.3rem;
+}
+
+/* Central mini games section (if ever uncommented) */
+.central-mini-games-section {
+    padding: 20px 0; 
+    margin-bottom: 20px; 
+}
+
+.central-mini-games-section h2 {
+    font-size: 1.8em; 
+    color: var(--colorful-accent-purple); /* Use colorful purple for these titles */
+    text-align: center; 
+    margin-bottom: 20px; 
+    font-family: 'Press Start 2P', cursive; 
+}
+
+/* 中间小游戏网格布局 */
+.sub-mini-game-grid {
+    display: grid; /* Grid布局 */
+    grid-template-columns: repeat(5, 1fr); /* 5列等宽 */
+    grid-template-rows: repeat(3, auto); /* 3行，高度自动 */
+    gap: 15px; /* 网格间距 */
+    padding: 0 10px; /* 左右内边距 */
+}
+
+/* 响应式调整：在中等屏幕上改为3列 */
+@media (max-width: 1024px) {
+    .sub-mini-game-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3列 */
+    }
+}
+
+/* 响应式调整：在小屏幕上改为2列 */
+@media (max-width: 600px) {
+    .sub-mini-game-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2列 */
+    }
+    .central-mini-games-section h2 {
+        font-size: 1.5em; /* 减小标题字号 */
+    }
+}
+
+/* 将主游戏区域分配到网格中间 */
+.main-game {
+    grid-area: main-content; /* 指定该元素在网格中的位置为 'main-content' */
+    background-color: var(--colorful-bg-section); /* 区块背景 */
+    border-radius: 8px; /* 圆角 */
+    box-shadow: 0 2px 10px var(--shadow-color-general); /* 阴影 */
+    overflow: hidden; /* 隐藏溢出内容 */
+    border: 1px solid var(--colorful-border); /* 边框 */
+    display: flex; /* 使用flex布局，使其子元素（game-container, game-info）能更好控制 */
+    flex-direction: column; /* flex子元素垂直排列 */
+}
+
+.game-list h2 {
+    color: var(--colorful-text-dark); /* 标题颜色 */
+    margin-bottom: 0.5rem; /* 下外边距 */
+    font-size: 1.1rem; /* 标题字号 */
+    border-bottom: 1px solid var(--colorful-border); /* 下边框 */
+    padding-bottom: 0.3rem; /* 内边距 */
+}
+
+.top-games {
+    grid-area: top; /* 顶部游戏列表，对应网格区域 'top' */
+    min-height: 100px; /* 顶部游戏列表最小高度，根据内容调整 */
+    display: grid; /* 让内部游戏项可以横向排列 */
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* 横向自动填充，每个最小120px */
+    gap: 0.5rem; /* 游戏项间距 */
+}
+
+/* 主页面左侧边栏的网格区域分配 */
+main > .game-list.left-games {
+    grid-area: left; /* 这是页面主布局的左侧边栏 */
+    /* General .game-list styles (background, padding) should apply. */
+    /* The layout of its .mini-game children is handled by the rule below. */
+}
+
+/* 所有使用 .left-games 类的游戏列表容器（包括主边栏和 side-games-container 内的列表） */
+/* 将其内部 .mini-game 项目设置为两列布局 */
+div.game-list.left-games {
+    display: grid; /* 启用网格布局以排列内部游戏项 */
+    grid-template-columns: repeat(2, 1fr); /* 创建两列等宽 */
+    gap: 0.5rem; /* 列和行之间的间隙 */
+    align-content: start; /* 网格内容从顶部开始对齐 */
+}
+
+.right-games { /* For main layout */
+    grid-area: right; /* 右侧游戏列表，对应网格区域 'right' */
+}
+
+/* Specific style for mini-games within the right sidebar to be rectangular */
+/* 右侧边栏内的游戏块使用长方形样式 */
+.right-games .mini-game {
+    aspect-ratio: 16 / 9; /* 设置为16:9的长方形宽高比 */
+}
+
+/* 特别为 .main-game 内部的 .side-games-container .game-list.left-games 设置一些特定样式 */
+.main-game .side-games-container .game-list.left-games {
+    /* 从 .game-list 继承背景、通用边距等 */
+    /* 这里可以添加/覆盖特定于此实例的样式 */
+    display: grid; /* 确保此元素也是一个网格容器 */
+    grid-template-columns: repeat(6, 1fr); /* 现在设置为六列等宽 */
+    gap: 0.5rem; /* 保持0.5rem的间隙，如果列数增加导致内容过窄，可以调整此值或字体大小 */
+    align-content: start; /* 网格内容从顶部开始对齐 */
+    max-height: 550px; /* 设置一个最大高度，以便内容溢出时可滚动 */
+    overflow-y: auto;  /* 当内容超出max-height时，显示垂直滚动条 */
+    padding: 0.5rem; /* 调整内边距以适应其在 .side-games-container 中的位置 */
+    /* background-color: var(--theme-black); /* 如果需要不同的背景颜色，取消注释此行 */
+    /* border: 1px solid var(--theme-border-dark); /* 如果需要边框，取消注释此行 */ 
+    border-radius: 6px; /* 轻微圆角 */
+}
+
+.bottom-games {
+    grid-area: bottom; /* 分配到 'bottom' 网格区域 */
+    min-height: 100px; /* 底部游戏列表最小高度，根据内容调整 */
+    display: grid; /* 让内部游戏项可以横向排列 */
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* 横向自动填充 */
+    gap: 0.5rem; /* 游戏项间距 */
+}
+
+/* 确保这是CSS文件的最后一行，不要在此后添加任何样式 */ 

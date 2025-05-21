@@ -1,0 +1,124 @@
+/* 响应式设计额外样式 - 确保网站在不同屏幕尺寸下都能良好显示 */
+
+/* 大屏幕样式 (1400px及以上) - 针对大显示器和高分辨率设备优化布局 */
+@media (min-width: 1400px) {
+    main {
+        grid-template-columns: 3.5fr 1fr 3.5fr; /* 保持与主样式文件一致，两侧区域更宽，中间更窄 */
+    }
+    
+    .game-container {
+        height: 700px; /* 增加游戏容器高度，充分利用大屏幕空间 */
+    }
+    
+    .retro-logo {
+        font-size: 2.5rem; /* 增加Logo字体大小，在大屏幕上更加醒目 */
+    }
+}
+
+/* 中等屏幕样式 (992px到1199px) - 针对普通笔记本电脑和小型显示器调整布局 */
+@media (max-width: 1199px) {
+    main {
+        grid-template-columns: 3fr 1fr 3fr; /* 保持同样的比例关系，只是略微调整 */
+    }
+    
+    .mini-game-grid {
+        grid-template-columns: 1fr; /* 将小游戏网格改为单列布局，避免空间不足 */
+    }
+    
+    .game-container {
+        height: 500px; /* 减小游戏容器高度，适应中等屏幕 */
+    }
+}
+
+/* 小屏幕样式 (768px到991px) - 针对平板设备调整布局 */
+@media (max-width: 991px) {
+    main {
+        grid-template-columns: 1fr; /* 较小屏幕布局调整：单列 */
+        grid-template-areas:
+            "top"
+            "main-content"
+            "left"
+            "right"
+            "bottom";
+    }
+    
+    .game-links, .mini-games {
+        position: fixed; /* 将侧边栏改为固定定位，实现侧滑菜单效果 */
+        top: 0; /* 定位到顶部 */
+        height: 100vh; /* 设置高度为视口高度，覆盖整个屏幕 */
+        z-index: 1000; /* 设置较高层级，确保显示在其他内容之上 */
+        transform: translateX(-100%); /* 默认隐藏在屏幕左侧 */
+        transition: transform 0.3s ease-in-out; /* 添加平滑过渡效果 */
+    }
+    
+    .game-links.active, .mini-games.active {
+        transform: translateX(0); /* 激活状态时显示侧边栏 */
+    }
+    
+    .mobile-menu-btn {
+        display: block; /* 显示移动端菜单按钮 */
+        position: fixed; /* 固定定位 */
+        top: 1rem; /* 距离顶部1rem */
+        left: 1rem; /* 距离左侧1rem */
+        z-index: 1001; /* 设置比侧边栏更高的层级 */
+        background-color: #2c3e50; /* 设置背景色 */
+        color: white; /* 设置文字颜色 */
+        border: none; /* 移除边框 */
+        padding: 0.5rem; /* 设置内边距 */
+        border-radius: 4px; /* 设置圆角 */
+        cursor: pointer; /* 鼠标悬停时显示手型光标 */
+    }
+}
+
+/* 超小屏幕样式 (576px及以下) - 针对手机设备优化布局和交互 */
+@media (max-width: 576px) {
+    .retro-logo {
+        font-size: 1.5rem; /* 减小Logo字体大小，适应小屏幕 */
+    }
+    
+    .language-selector {
+        flex-wrap: wrap; /* 允许语言选择器按钮换行 */
+        justify-content: center; /* 居中对齐按钮 */
+    }
+    
+    .lang-btn {
+        font-size: 0.8rem; /* 减小按钮字体大小 */
+        padding: 0.3rem 0.6rem; /* 减小按钮内边距 */
+    }
+    
+    .game-container {
+        height: 300px; /* 减小游戏容器高度，适应手机屏幕 */
+    }
+    
+    .fullscreen-btn {
+        padding: 0.3rem 0.6rem; /* 减小全屏按钮内边距 */
+        font-size: 0.8rem; /* 减小按钮字体大小 */
+    }
+    
+    .game-info h2 {
+        font-size: 1.2rem; /* 减小标题字体大小 */
+    }
+    
+    .game-info h3 {
+        font-size: 1rem; /* 减小副标题字体大小 */
+    }
+}
+
+/* 打印样式 - 针对页面打印优化，隐藏不必要的元素，调整布局 */
+@media print {
+    .game-container, .mini-games, .language-selector, .fullscreen-btn {
+        display: none; /* 隐藏游戏容器、小游戏区域、语言选择器和全屏按钮，不需要打印 */
+    }
+    
+    body {
+        background-color: white; /* 设置背景为白色，节省打印墨水 */
+    }
+    
+    main {
+        grid-template-columns: 1fr; /* 改为单列布局，适合打印 */
+    }
+    
+    .game-info {
+        padding: 0; /* 移除内边距，节省打印空间 */
+    }
+} 

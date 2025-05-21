@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QM4PT77FYD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-QM4PT77FYD');
+    </script>
+    <!-- 设置文档字符编码为UTF-8，确保正确显示各种语言字符 -->
+    <meta charset="UTF-8">
+    <!-- 设置视口，使网站在移动设备上正确缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO元标签，用于搜索引擎优化 -->
+    <title>Stone Puzzle Games - Play Free Online Brain Teasers & Logic Puzzles</title>
+    <!-- 网站描述，用于搜索引擎结果展示 -->
+    <meta name="description"
+        content="Stone Puzzle Games offers a wide range of free online brain teasers and logic puzzles to challenge your mind. Explore fun, interactive games designed for all ages.">
+    <!-- 规范链接，告诉搜索引擎这是网站的主要URL -->
+    <link rel="canonical" href="https://qdweigang.com">
+
+    <!-- 网站图标设置 -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- 引入CSS样式文件 - 添加随机参数强制浏览器重新加载最新样式 -->
+    <link rel="stylesheet" href="css/styles.css?v=20240517093000">
+    <!-- 引入响应式设计样式文件，确保在不同设备上正常显示 -->
+    <link rel="stylesheet" href="css/responsive.css?v=20240517093000">
+
+    <!-- 引入Google字体 - Press Start 2P，用于复古游戏风格的标题 -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- 页面顶部区域 -->
+    <header>
+        <!-- 网站Logo容器 -->
+        <div class="logo-container">
+            <!-- 使用h1标签包裹网站名称，提高SEO权重 -->
+            <h1 class="retro-logo">Stone Puzzle Games</h1>
+        </div>
+        <!-- 多语言选择器，允许用户切换网站语言 -->
+        <div class="language-selector">
+            <!-- 英文按钮，默认激活 -->
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <!-- 中文按钮 -->
+            <button class="lang-btn" data-lang="zh">中文</button>
+            <!-- 日文按钮 -->
+            <button class="lang-btn" data-lang="ja">日本語</button>
+            <!-- 韩文按钮 -->
+            <button class="lang-btn" data-lang="ko">한국어</button>
+            <!-- 西班牙语按钮 -->
+            <button class="lang-btn" data-lang="es">ES</button>
+        </div>
+    </header>
+
+    <!-- 页面主体内容区域 -->
+    <main>
+        <!-- 新增的顶部游戏列表区域 -->
+        <!-- <div class="game-list top-games">
+            <h2>热门游戏</h2>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/slice-master">
+                <div class="game-cover">
+                    <img src="images/games/Slice Master.jpg" alt="Slice Master Game">
+                    <div class="game-title">Slice Master</div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/street-life">
+                <div class="game-cover">
+                    <img src="images/games/Street Life.jpg" alt="Street Life Game">
+                    <div class="game-title">Street Life</div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/stick-war">
+                <div class="game-cover">
+                    <img src="images/games/Stick War.jpg" alt="Stick War Game">
+                    <div class="game-title">Stick War</div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/k-sniper-challenge-3d">
+                <div class="game-cover">
+                    <img src="images/games/Sniper Challenge.jpg" alt="Sniper Challenge Game">
+                    <div class="game-title">Sniper Challenge</div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/find-the-vampire">
+                <div class="game-cover">
+                    <img src="images/games/Find the Vampire.jpg" alt="Find the Vampire Game">
+                    <div class="game-title">Find the Vampire</div>
+                </div>
+            </div>
+
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/super-slime-mqf">
+                <div class="game-cover">
+                    <img src="images/games/Super Slime.jpg" alt="Super Slime Game">
+                    <div class="game-title">Super Slime</div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/mad-royale-tactics">
+                <div class="game-cover">
+                    <img src="images/games/Mad Royale Tactics.jpg" alt="Mad Royale Tactics Game">
+                    <div class="game-title">Mad Royale Tactics</div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/tile-jumper-3d">
+                <div class="game-cover">
+                    <img src="images/games/Tile Jumper 3D.jpg" alt="Tile Jumper 3D Game">
+                    <div class="game-title">Tile Jumper 3D</div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/puzzle-survivor">
+                <div class="game-cover">
+                    <img src="images/games/Puzzle Survivor.jpg" alt="Puzzle Survivor Game">
+                    <div class="game-title">Puzzle Survivor</div>
+                </div>
+            </div>
+
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/twisted-tangle-nmt">
+                <div class="game-cover">
+                    <img src="images/games/Twisted Tangle.jpg" alt="Twisted Tangle Game">
+                    <div class="game-title">Twisted Tangle</div>
+                </div>
+
+            </div>
+        </div> -->
+
+        <!-- 左侧游戏列表区域 -->
+        <div class="game-list left-games">
+            <!-- 左侧游戏列表标题 -->
+            <!-- <h2>最新游戏</h2> -->
+            <!-- 游戏项开始 -->
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/k-sniper-challenge-3d">
+                <div class="game-cover">
+                    <img src="images/games/Sniper Challenge.jpg" alt="Sniper Challenge Game">
+                    <div class="game-title">Sniper Challenge</div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/find-the-vampire">
+                <div class="game-cover">
+                    <img src="images/games/Find the Vampire.jpg" alt="Find the Vampire Game">
+                    <div class="game-title">Find the Vampire</div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/super-slime-mqf">
+                <div class="game-cover">
+                    <img src="images/games/Super Slime.jpg" alt="Super Slime Game">
+                    <div class="game-title">Super Slime</div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/mad-royale-tactics">
+                <div class="game-cover">
+                    <img src="images/games/Mad Royale Tactics.jpg" alt="Mad Royale Tactics Game">
+                    <div class="game-title">Mad Royale Tactics</div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/tile-jumper-3d">
+                <div class="game-cover">
+                    <img src="images/games/Tile Jumper 3D.jpg" alt="Tile Jumper 3D Game">
+                    <div class="game-title">Tile Jumper 3D</div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/puzzle-survivor">
+                <div class="game-cover">
+                    <img src="images/games/Puzzle Survivor.jpg" alt="Puzzle Survivor Game">
+                    <div class="game-title">Puzzle Survivor</div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/k-sniper-challenge-3d">
+                <div class="game-cover">
+                    <img src="images/games/Sniper Challenge.jpg" alt="Sniper Challenge Game">
+                    <div class="game-title">Sniper Challenge</div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/find-the-vampire">
+                <div class="game-cover">
+                    <img src="images/games/Find the Vampire.jpg" alt="Find the Vampire Game">
+                    <div class="game-title">Find the Vampire</div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/super-slime-mqf">
+                <div class="game-cover">
+                    <img src="images/games/Super Slime.jpg" alt="Super Slime Game">
+                    <div class="game-title">Super Slime</div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/mad-royale-tactics">
+                <div class="game-cover">
+                    <img src="images/games/Mad Royale Tactics.jpg" alt="Mad Royale Tactics Game">
+                    <div class="game-title">Mad Royale Tactics</div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/tile-jumper-3d">
+                <div class="game-cover">
+                    <img src="images/games/Tile Jumper 3D.jpg" alt="Tile Jumper 3D Game">
+                    <div class="game-title">Tile Jumper 3D</div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/puzzle-survivor">
+                <div class="game-cover">
+                    <img src="images/games/Puzzle Survivor.jpg" alt="Puzzle Survivor Game">
+                    <div class="game-title">Puzzle Survivor</div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/k-sniper-challenge-3d">
+                <div class="game-cover">
+                    <img src="images/games/Sniper Challenge.jpg" alt="Sniper Challenge Game">
+                    <div class="game-title">Sniper Challenge</div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/find-the-vampire">
+                <div class="game-cover">
+                    <img src="images/games/Find the Vampire.jpg" alt="Find the Vampire Game">
+                    <div class="game-title">Find the Vampire</div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/super-slime-mqf">
+                <div class="game-cover">
+                    <img src="images/games/Super Slime.jpg" alt="Super Slime Game">
+                    <div class="game-title">Super Slime</div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/mad-royale-tactics">
+                <div class="game-cover">
+                    <img src="images/games/Mad Royale Tactics.jpg" alt="Mad Royale Tactics Game">
+                    <div class="game-title">Mad Royale Tactics</div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/tile-jumper-3d">
+                <div class="game-cover">
+                    <img src="images/games/Tile Jumper 3D.jpg" alt="Tile Jumper 3D Game">
+                    <div class="game-title">Tile Jumper 3D</div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/puzzle-survivor">
+                <div class="game-cover">
+                    <img src="images/games/Puzzle Survivor.jpg" alt="Puzzle Survivor Game">
+                    <div class="game-title">Puzzle Survivor</div>
+                </div>
+            </div>
+
+            <!-- 游戏项结束 -->
+        </div>
+
+        <!-- 中间主区域 - 主游戏展示 (保留用户现有的iframe和game-info) -->
+        <section class="main-game">
+            <!-- 游戏容器，包含iframe嵌入的游戏和全屏按钮 -->
+            <div class="game-container">
+                <!-- 使用iframe嵌入外部游戏，设置ID便于JavaScript操作 -->
+                <iframe id="mainGameFrame" src="https://www.crazygames.com/game/stone-puzzle-games" frameborder="0"
+                    allow="gamepad *;"></iframe>
+                <!-- 全屏按钮，点击后可将游戏全屏显示 -->
+                <button id="fullscreenBtn" class="fullscreen-btn">Fullscreen</button>
+            </div>
+
+            <div class="side-games-container">
+                <!-- 游戏列表区域 - 合并了原左右两侧的游戏 -->
+                <div class="game-list left-games">
+                    <!-- <h3>More Games</h3> -->
+                    <div class="mini-game" data-src="https://www.crazygames.com/embed/k-sniper-challenge-3d">
+                        <div class="game-cover">
+                            <img src="images/games/Sniper Challenge.jpg" alt="Sniper Challenge Game">
+                            <div class="game-title">Sniper Challenge</div>
+                        </div>
+                    </div>
+                    <div class="mini-game" data-src="https://www.crazygames.com/embed/find-the-vampire">
+                        <div class="game-cover">
+                            <img src="images/games/Find the Vampire.jpg" alt="Find the Vampire Game">
+                            <div class="game-title">Find the Vampire</div>
+                        </div>
+                    </div>
+                    <div class="mini-game" data-src="https://www.crazygames.com/embed/super-slime-mqf">
+                        <div class="game-cover">
+                            <img src="images/games/Super Slime.jpg" alt="Super Slime Game">
+                            <div class="game-title">Super Slime</div>
+                        </div>
+                    </div>
+                    <div class="mini-game" data-src="https://www.crazygames.com/embed/mad-royale-tactics">
+                        <div class="game-cover">
+                            <img src="images/games/Mad Royale Tactics.jpg" alt="Mad Royale Tactics Game">
+                            <div class="game-title">Mad Royale Tactics</div>
+                        </div>
+                    </div>
+                    <div class="mini-game" data-src="https://www.crazygames.com/embed/tile-jumper-3d">
+                        <div class="game-cover">
+                            <img src="images/games/Tile Jumper 3D.jpg" alt="Tile Jumper 3D Game">
+                            <div class="game-title">Tile Jumper 3D</div>
+                        </div>
+                    </div>
+                    <div class="mini-game" data-src="https://www.crazygames.com/embed/dig-tycoon---idle-game-3d">
+                        <div class="game-cover">
+                            <img src="images/games/Dig Tycoon.jpg" alt="Dig Tycoon Game">
+                            <div class="game-title">Dig Tycoon</div>
+                        </div>
+                    </div>
+                    <div class="mini-game" data-src="https://www.twoplayergames.org/embed/volley-beans">
+                        <div class="game-cover">
+                            <img src="images/games/Volley Beans.jpg" alt="Volley Beans Game">
+                            <div class="game-title">Volley Beans</div>
+                        </div>
+                    </div>
+                    <div class="mini-game" data-src="https://www.crazygames.com/embed/8-ball-billiards-classic">
+                        <div class="game-cover">
+                            <img src="images/games/8 Ball BilliardsClassic.jpg" alt="8 Ball Billiards Game">
+                            <div class="game-title">8 Ball Billiards</div>
+                        </div>
+                    </div>
+                    <div class="mini-game" data-src="https://www.crazygames.com/embed/street-life">
+                        <div class="game-cover">
+                            <img src="images/games/Street Life.jpg" alt="Street Life Game">
+                            <div class="game-title">Street Life</div>
+                        </div>
+                    </div>
+                    <div class="mini-game" data-src="https://www.crazygames.com/embed/stick-war">
+                        <div class="game-cover">
+                            <img src="images/games/Stick War.jpg" alt="Stick War Game">
+                            <div class="game-title">Stick War</div>
+                        </div>
+                    </div>
+                    <div class="mini-game" data-src="https://www.crazygames.com/embed/k-sniper-challenge-3d">
+                        <div class="game-cover">
+                            <img src="images/games/Sniper Challenge.jpg" alt="Sniper Challenge Game">
+                            <div class="game-title">Sniper Challenge</div>
+                        </div>
+                    </div>
+                    <div class="mini-game" data-src="https://www.crazygames.com/embed/find-the-vampire">
+                        <div class="game-cover">
+                            <img src="images/games/Find the Vampire.jpg" alt="Find the Vampire Game">
+                            <div class="game-title">Find the Vampire</div>
+                        </div>
+                    </div>
+                    <div class="mini-game" data-src="https://www.crazygames.com/embed/super-slime-mqf">
+                        <div class="game-cover">
+                            <img src="images/games/Super Slime.jpg" alt="Super Slime Game">
+                            <div class="game-title">Super Slime</div>
+                        </div>
+                    </div>
+                    <div class="mini-game" data-src="https://www.crazygames.com/embed/mad-royale-tactics">
+                        <div class="game-cover">
+                            <img src="images/games/Mad Royale Tactics.jpg" alt="Mad Royale Tactics Game">
+                            <div class="game-title">Mad Royale Tactics</div>
+                        </div>
+                    </div>
+                    <div class="mini-game" data-src="https://www.crazygames.com/embed/tile-jumper-3d">
+                        <div class="game-cover">
+                            <img src="images/games/Tile Jumper 3D.jpg" alt="Tile Jumper 3D Game">
+                            <div class="game-title">Tile Jumper 3D</div>
+                        </div>
+                    </div>
+                    <!-- 从原Featured Games部分移过来的游戏 -->
+                    <div class="mini-game" data-src="https://www.crazygames.com/embed/dig-tycoon---idle-game-3d">
+                        <div class="game-cover">
+                            <img src="images/games/Dig Tycoon.jpg" alt="Dig Tycoon Game">
+                            <div class="game-title">Dig Tycoon</div>
+                        </div>
+                    </div>
+                    <div class="mini-game" data-src="https://www.twoplayergames.org/embed/volley-beans">
+                        <div class="game-cover">
+                            <img src="images/games/Volley Beans.jpg" alt="Volley Beans Game">
+                            <div class="game-title">Volley Beans</div>
+                        </div>
+                    </div>
+                    <div class="mini-game" data-src="https://www.crazygames.com/embed/8-ball-billiards-classic">
+                        <div class="game-cover">
+                            <img src="images/games/8 Ball BilliardsClassic.jpg" alt="8 Ball Billiards Game">
+                            <div class="game-title">8 Ball Billiards</div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- 原右侧游戏列表区域 (game-list right-games) 已被移除 -->
+            </div>
+
+            <!-- 游戏信息区域，包含多个子部分 -->
+            <div class="game-info">
+                <!-- 游戏标题 -->
+                <h2>Stone Puzzle Games</h2>
+
+                <!-- 游戏截图展示区域，使用flex布局横向排列 -->
+                <div class="game-screenshots">
+                    <img src="images/1.png" alt="Game Screenshot 1">
+                    <img src="images/2.png" alt="Game Screenshot 2">
+                    <img src="images/3.png" alt="Game Screenshot 3">
+                </div>
+
+                <!-- 游戏特点列表 -->
+                <div class="game-features">
+                    <h3>Game Features</h3>
+                    <ul>
+                        <li>Stone Puzzle Games brings you engaging puzzles that challenge your logic and creativity</li>
+                        <li>Stunning graphics and smooth animations make Stone Puzzle Games visually appealing</li>
+                        <li>Multiple levels with increasing difficulty to keep you entertained</li>
+                        <li>Interactive gameplay designed for players of all ages in Stone Puzzle Games</li>
+                        <li>Seamless user interface for an intuitive gaming experience</li>
+                        <li>Regular updates with new puzzles and features</li>
+                    </ul>
+                </div>
+
+                <!-- 游戏描述文本 -->
+                <div class="game-description">
+                    <h3>About the Game</h3>
+                    <p>Stone Puzzle Games is a captivating platform offering a variety of brain-teasing puzzles designed
+                        to challenge and entertain players of all ages. As the premier destination for puzzle
+                        enthusiasts, Stone Puzzle Games combines intuitive gameplay with visually appealing design to
+                        provide an engaging experience that sharpens your problem-solving skills. Our dedication to
+                        quality makes Stone Puzzle Games the perfect choice for players seeking both entertainment and
+                        mental stimulation.</p>
+                </div>
+
+                <!-- 游戏操作指南 -->
+                <div class="how-to-play">
+                    <h3>How to Play</h3>
+                    <p>Stone Puzzle Games offers intuitive gameplay that is easy to learn yet challenging to master.
+                        Follow these steps to enjoy the game:</p>
+                    <p>Use the Left Mouse Button to drag, drop, shoot, and connect.</p>
+                </div>
+
+                <!-- 游戏技巧提示 -->
+                <div class="game-tips">
+                    <h3>Pro Tips</h3>
+                    <ul>
+                        <li>Analyze each puzzle carefully before making your first move to maximize efficiency.</li>
+                        <li>Use hints sparingly to challenge yourself and improve your problem-solving skills.</li>
+                        <li>Focus on completing easier puzzles first to build confidence and unlock advanced levels.
+                        </li>
+                        <li>Experiment with different strategies to find the most effective solutions for complex
+                            puzzles.</li>
+                        <li>Take breaks between sessions to maintain focus and enjoy the Stone Puzzle Games experience
+                            fully.</li>
+                    </ul>
+                </div>
+
+                <!-- 玩家评论区域 -->
+                <div class="player-reviews">
+                    <h3>What Players Love</h3>
+                    <div class="review">
+                        <p>"Stone Puzzle Games offers the perfect blend of challenge and entertainment. The puzzles are
+                            brilliantly designed!"</p>
+                        <span>- Emma R.</span>
+                    </div>
+                    <div class="review">
+                        <p>"I'm addicted to these brain teasers! Stone Puzzle Games has become my daily mental workout."
+                        </p>
+                        <span>- David M.</span>
+                    </div>
+                    <div class="review">
+                        <p>"The variety of puzzles keeps me coming back. Stone Puzzle Games is definitely my favorite
+                            puzzle platform."</p>
+                        <span>- Alice W.</span>
+                    </div>
+                    <div class="review">
+                        <p>"Perfect for quick gaming sessions. The progressive difficulty keeps it challenging and
+                            engaging!"</p>
+                        <span>- James K.</span>
+                    </div>
+                </div>
+
+                <!-- 网站优势介绍区域 -->
+                <div class="why-section">
+                    <h3>Why Choose Stone Puzzle Games?</h3>
+                    <div class="why-content">
+                        <div class="why-item">
+                            <h4>🧩 Ultimate Puzzle Experience</h4>
+                            <p>Stone Puzzle Games delivers an unmatched collection of brain-teasing challenges. Our
+                                carefully crafted puzzles combine elegant design with increasing complexity, ensuring an
+                                engaging experience for both casual players and puzzle enthusiasts.</p>
+                        </div>
+                        <div class="why-item">
+                            <h4>🎯 Progressive Learning</h4>
+                            <p>Unlike other puzzle platforms, Stone Puzzle Games features an intelligent difficulty
+                                progression system. Each level builds upon previous concepts while introducing new
+                                mechanics, helping you develop advanced problem-solving skills naturally.</p>
+                        </div>
+                        <div class="why-item">
+                            <h4>🎨 Visual Excellence</h4>
+                            <p>Stone Puzzle Games stands out with its stunning visual design and smooth animations. Our
+                                attention to aesthetic detail creates an immersive atmosphere that enhances your
+                                puzzle-solving journey.</p>
+                        </div>
+                        <div class="why-item">
+                            <h4>🌟 Regular Updates</h4>
+                            <p>We're committed to keeping Stone Puzzle Games fresh and exciting. Our regular updates
+                                bring new puzzles, features, and challenges, ensuring you always have something new to
+                                discover and master.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 游戏更新信息 -->
+                <div class="game-updates">
+                    <h3>Latest Updates</h3>
+                    <ul>
+                        <li>Stone Puzzle Games adds 20 challenging new puzzle levels</li>
+                        <li>New achievement system introduced to Stone Puzzle Games</li>
+                        <li>Enhanced visual effects and animations in Stone Puzzle Games</li>
+                        <li>Daily challenges with special rewards now available</li>
+                        <li>last updated Apr 28, 2025</li>
+                    </ul>
+                </div>
+
+                <!-- 常见问题解答区域 -->
+                <div class="faq">
+                    <h3>Frequently Asked Questions</h3>
+                    <div class="faq-item">
+                        <h4>Is this game free to play?</h4>
+                        <p>Yes, all games on our platform are completely free!</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4>What are the system requirements?</h4>
+                        <p>The game runs smoothly on most modern browsers. We recommend using Chrome or Firefox for the
+                            best experience.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>How do I save my progress?</h4>
+                        <p>Your progress is automatically saved when you're logged in. Make sure to create an account to
+                            keep track of your achievements.</p>
+                    </div>
+                </div>
+            </div> <!-- game-info 结束 -->
+        </section> <!-- main-game 结束 -->
+
+        <!-- 右侧游戏列表区域 -->
+        <div class="game-list right-games">
+            <!-- 右侧游戏列表标题 -->
+            <!-- <h2>推荐游戏</h2> -->
+            <!-- 游戏项开始 -->
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/dig-tycoon---idle-game-3d">
+                <div class="game-cover">
+                    <img src="images/games/Dig Tycoon.jpg" alt="Dig Tycoon Game">
+                    <div class="game-title">Dig Tycoon</div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.twoplayergames.org/embed/volley-beans">
+                <div class="game-cover">
+                    <img src="images/games/Volley Beans.jpg" alt="Volley Beans Game">
+                    <div class="game-title">Volley Beans</div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/8-ball-billiards-classic">
+                <div class="game-cover">
+                    <img src="images/games/8 Ball BilliardsClassic.jpg" alt="8 Ball Billiards Game">
+                    <div class="game-title">8 Ball Billiards</div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/street-life">
+                <div class="game-cover">
+                    <img src="images/games/Street Life.jpg" alt="Street Life Game">
+                    <div class="game-title">Street Life</div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/stick-war">
+                <div class="game-cover">
+                    <img src="images/games/Stick War.jpg" alt="Stick War Game">
+                    <div class="game-title">Stick War</div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/dig-tycoon---idle-game-3d">
+                <div class="game-cover">
+                    <img src="images/games/Dig Tycoon.jpg" alt="Dig Tycoon Game">
+                    <div class="game-title">Dig Tycoon</div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.twoplayergames.org/embed/volley-beans">
+                <div class="game-cover">
+                    <img src="images/games/Volley Beans.jpg" alt="Volley Beans Game">
+                    <div class="game-title">Volley Beans</div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/8-ball-billiards-classic">
+                <div class="game-cover">
+                    <img src="images/games/8 Ball BilliardsClassic.jpg" alt="8 Ball Billiards Game">
+                    <div class="game-title">8 Ball Billiards</div>
+                </div>
+            </div>
+            <!-- 游戏项结束 -->
+        </div>
+
+        <!-- 底部游戏列表区域 -->
+        <!-- <div class="game-list bottom-games"> -->
+        <!-- 底部游戏列表标题 -->
+        <!-- <h2>经典游戏</h2> -->
+        <!-- 游戏项开始 -->
+        <!-- <div class="mini-game" data-src="https://www.crazygames.com/embed/slice-master">
+                <div class="game-cover">
+                    <img src="images/games/Slice Master.jpg" alt="Slice Master Game">
+                    <div class="game-title">Slice Master</div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/street-life">
+                <div class="game-cover">
+                    <img src="images/games/Street Life.jpg" alt="Street Life Game">
+                    <div class="game-title">Street Life</div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/stick-war">
+                <div class="game-cover">
+                    <img src="images/games/Stick War.jpg" alt="Stick War Game">
+                    <div class="game-title">Stick War</div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/k-sniper-challenge-3d">
+                <div class="game-cover">
+                    <img src="images/games/Sniper Challenge.jpg" alt="Sniper Challenge Game">
+                    <div class="game-title">Sniper Challenge</div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/find-the-vampire">
+                <div class="game-cover">
+                    <img src="images/games/Find the Vampire.jpg" alt="Find the Vampire Game">
+                    <div class="game-title">Find the Vampire</div>
+                </div>
+            </div>
+
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/super-slime-mqf">
+                <div class="game-cover">
+                    <img src="images/games/Super Slime.jpg" alt="Super Slime Game">
+                    <div class="game-title">Super Slime</div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/mad-royale-tactics">
+                <div class="game-cover">
+                    <img src="images/games/Mad Royale Tactics.jpg" alt="Mad Royale Tactics Game">
+                    <div class="game-title">Mad Royale Tactics</div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/tile-jumper-3d">
+                <div class="game-cover">
+                    <img src="images/games/Tile Jumper 3D.jpg" alt="Tile Jumper 3D Game">
+                    <div class="game-title">Tile Jumper 3D</div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/puzzle-survivor">
+                <div class="game-cover">
+                    <img src="images/games/Puzzle Survivor.jpg" alt="Puzzle Survivor Game">
+                    <div class="game-title">Puzzle Survivor</div>
+                </div>
+            </div>
+
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/twisted-tangle-nmt">
+                <div class="game-cover">
+                    <img src="images/games/Twisted Tangle.jpg" alt="Twisted Tangle Game">
+                    <div class="game-title">Twisted Tangle</div>
+                </div> -->
+        <!-- 游戏项结束 -->
+        <!-- </div> -->
+    </main>
+
+    <!-- 页面底部区域 -->
+    <footer>
+        <div class="footer-content">
+            <!-- 版权信息和联系方式 -->
+            <div class="copyright">
+                <!-- ICP备案号链接 -->
+                <p><a href="https://beian.miit.gov.cn" rel="nofollow">渝ICP备2025051720号-64</a></p>
+                <!-- 联系邮箱 -->
+                <p>Contact Us: ytsgabcde004@2925.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 引入JavaScript文件 -->
+    <!-- 主要功能脚本，处理游戏切换、全屏等功能 -->
+    <script src="js/main.js"></script>
+    <!-- 多语言切换功能脚本 -->
+    <script src="js/language.js"></script>
+
+    <!-- 添加测试脚本，强制应用布局 -->
+    <script src="test.js?v=20240517093500"></script>
+</body>
+
+</html>
+
+</html>
+
+</html>
